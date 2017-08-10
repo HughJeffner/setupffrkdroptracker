@@ -8,11 +8,11 @@ In short, this installer will:
 * Emulator setup instructions included in setup
 * Download and installation of prerequisites
 
-## Requirements:
-Inno Setup
+## Build Requirements
+Inno Setup: 
 http://www.jrsoftware.org/isinfo.php
 
-Inno Download Plugin
+Inno Download Plugin: 
 https://mitrichsoftware.wordpress.com/inno-setup-tools/inno-download-plugin/
 
 ## I Just Want to Install it
