@@ -1,0 +1,1 @@
+mitmdump -b %COMPUTERNAME% -s ffrk_tracker_v1.1.py
