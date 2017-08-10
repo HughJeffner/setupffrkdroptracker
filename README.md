@@ -1,4 +1,4 @@
-# Setup FFRK Drop Trakcer
+# FFRK Drop Tracker Setup
 This project creates an installer to simplify the setup of FFRK Drop Tracker:
 https://www.reddit.com/r/FFRecordKeeper/comments/6g87k8/ffrk_drop_tracker_an_easier_way_to_view_your/
 
