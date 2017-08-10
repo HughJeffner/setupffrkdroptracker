@@ -14,3 +14,6 @@ http://www.jrsoftware.org/isinfo.php
 
 Inno Download Plugin
 https://mitrichsoftware.wordpress.com/inno-setup-tools/inno-download-plugin/
+
+## I Just Want to Install it
+Check [Releases](https://github.com/HughJeffner/setupffrkdroptracker/releases)
