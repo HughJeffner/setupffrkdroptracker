@@ -19,10 +19,10 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={userdocs}\{#MyAppName}
 DefaultGroupName={#MyAppName}
-InfoBeforeFile=prep.rtf
-InfoAfterFile=setup.rtf
+InfoBeforeFile=docs/prep.rtf
+InfoAfterFile=docs/setup.rtf
 OutputBaseFilename=setupffrkdroptracker
-SetupIconFile=FFRK_Gysahl.ico
+SetupIconFile=icon.ico
 Compression=lzma
 SolidCompression=yes
 AppCopyright=r/therealhughjeffner 2017
@@ -32,22 +32,22 @@ VersionInfoVersion=1.0
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
-Source: "ffrk_drop_tracker.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: required
-Source: "ffrk_copyproxybypasstoclipboard.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: required
-Source: "ffrk_drop_tracker.py"; DestDir: "{app}"; Flags: ignoreversion; Components: required
-Source: "ffrk_drop_tracker_db.csv"; DestDir: "{app}"; Flags: ignoreversion; Components: required
-Source: "FFRK_Gysahl.ico"; DestDir: "{app}"; Flags: ignoreversion; Components: required
+Source: "files\ffrk_drop_tracker.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: required
+Source: "files\ffrk_copyproxybypasstoclipboard.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: required
+Source: "files\ffrk_drop_tracker.py"; DestDir: "{app}"; Flags: ignoreversion; Components: required
+Source: "files\ffrk_drop_tracker_db.csv"; DestDir: "{app}"; Flags: ignoreversion; Components: required
+Source: "icon.ico"; DestDir: "{app}"; Flags: ignoreversion; Components: required
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 Source: "{tmp}\vc_redist.x86.exe"; DestDir: "{app}"; Flags: external deleteafterinstall; ExternalSize: 13767776; Components: prereq
 Source: "{tmp}\mitmproxy-2.0.2-windows-installer.exe"; DestDir: "{app}"; Flags: external deleteafterinstall; ExternalSize: 34162113; Components: prereq
 
 [Icons]
-Name: "{group}\FFRK Drop Tracker"; Filename: "{app}\ffrk_drop_tracker.bat"; WorkingDir: "{app}"; IconFilename: "{app}\FFRK_Gysahl.ico"; IconIndex: 0; Components: required
+Name: "{group}\FFRK Drop Tracker"; Filename: "{app}\ffrk_drop_tracker.bat"; WorkingDir: "{app}"; IconFilename: "{app}\icon.ico"; IconIndex: 0; Components: required
 Name: "{group}\View Reddit Post"; Filename: "{#MyAppURL}"; Components: required
 Name: "{group}\Copy Proxy Bypass List to Clipboard"; Filename: "{app}\ffrk_copyproxybypasstoclipboard.bat"; WorkingDir: "{app}"; MinVersion: 0,5.01; Components: required
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"; Components: required
-Name: "{userdesktop}\FFRK Drop Tracker"; Filename: "{app}\ffrk_drop_tracker.bat"; WorkingDir: "{app}"; IconFilename: "{app}\FFRK_Gysahl.ico"; IconIndex: 0; Components: required; Tasks: desktopicon
-Name: "{app}\FFRK Drop Tracker"; Filename: "{app}\ffrk_drop_tracker.bat"; WorkingDir: "{app}"; IconFilename: "{app}\FFRK_Gysahl.ico"; IconIndex: 0; Components: required
+Name: "{userdesktop}\FFRK Drop Tracker"; Filename: "{app}\ffrk_drop_tracker.bat"; WorkingDir: "{app}"; IconFilename: "{app}\icon.ico"; IconIndex: 0; Components: required; Tasks: desktopicon
+Name: "{app}\FFRK Drop Tracker"; Filename: "{app}\ffrk_drop_tracker.bat"; WorkingDir: "{app}"; IconFilename: "{app}\icon.ico"; IconIndex: 0; Components: required
 
 [Run]
 Filename: "{app}\vc_redist.x86.exe"; Parameters: "/quiet"; WorkingDir: "{app}"; Flags: runhidden; StatusMsg: "Installing Visual C++ Redistributable for Visual Studio 2015"; Components: prereq
