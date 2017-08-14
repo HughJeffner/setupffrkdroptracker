@@ -4,6 +4,7 @@
 #define MyAppPublisher "BaconCatBug"
 #define MyAppURL "https://www.reddit.com/r/FFRecordKeeper/comments/6g87k8/ffrk_drop_tracker_an_easier_way_to_view_your/"
               
+
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
@@ -25,6 +26,7 @@ Compression=lzma
 SolidCompression=yes
 AppCopyright=u/baconcatbug 2017
 VersionInfoVersion=1.0
+UninstallDisplayIcon={app}\icon.ico
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
