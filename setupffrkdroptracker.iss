@@ -3,7 +3,6 @@
 #define MyAppVersion "1.1"
 #define MyAppPublisher "BaconCatBug"
 #define MyAppURL "https://www.reddit.com/r/FFRecordKeeper/comments/6g87k8/ffrk_drop_tracker_an_easier_way_to_view_your/"
-              
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -20,7 +19,7 @@ DefaultDirName={userdocs}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 InfoBeforeFile=docs/prep.rtf
 InfoAfterFile=docs/setup.rtf
-OutputBaseFilename=setupffrkdroptracker
+OutputBaseFilename=setupffrkdroptracker_v{#MyAppVersion}
 SetupIconFile=icon.ico
 Compression=lzma
 SolidCompression=yes
