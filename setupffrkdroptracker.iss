@@ -2,7 +2,7 @@
 #define MyAppName "FFRK Drop Tracker"
 #define MyAppVersion "1.1"
 #define MyAppPublisher "BaconCatBug"
-#define MyAppURL "https://www.reddit.com/r/FFRecordKeeper/comments/6g87k8/ffrk_drop_tracker_an_easier_way_to_view_your/"
+#define MyAppURL "https://www.reddit.com/r/FFRecordKeeper/comments/6vhyod/ffrk_drop_tracker_export_your_entire_inventory/"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
