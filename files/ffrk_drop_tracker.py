@@ -12,8 +12,7 @@ def response(flow):
     results = {
         'materias': [],
         'potions':  [],
-        'drops':    {},
-        'exp2X':    []
+        'drops':    {}
     }
 
     for round in rounds:
@@ -39,10 +38,6 @@ def response(flow):
 
         for materia in round['drop_materias']:
             results['materias'].append(materia['name'])
-            
-    for charUID in data['battle']['buddy_boost_map']['exp']:
-        if (data['battle']['buddy_boost_map']['exp'][charUID] == '200'):
-            results['exp2X'].append(int(charUID))
 
     print('######################################')
     print(time.strftime("%Y-%m-%d %H:%M:%S"))
@@ -105,19 +100,38 @@ def response(flow):
 
         for materia in results['materias']:
             print(materia)
-            
-    if len(results['exp2X']):
-        if (multi_segment):
-            print('\n-------------------\n')
-
-        multi_segment = True
-
-        charNames = []
-
-        for charData in data['battle']['buddy']:
-            if charData['uid'] in results['exp2X']:
-                charNames.append(charData['params'][0]['disp_name'])
-
-        print('Double XP: ' + ', '.join(charNames))
 
     print('\n\n')
+    
+    get_EXP_RM_Boosts(data)
+
+    
+def get_EXP_RM_Boosts(data):
+    
+    results = []
+    
+    # Alternative character names, defined by id ("buddy_id"). Workaround for characters with the same ingame name, e.g. "Cid".
+    names_fixed = {
+        '10000200': 'Tyro',
+        '10400100': 'Dark Cecil',
+        '10400200': 'Paladin Cecil',
+        '10401500': 'Cid (IV)',
+        '10701100': 'Cid (VII)',
+        '11400800': 'Cid (XIV)'
+    }
+    
+    buddies = data['battle']['buddy']
+    buddies.sort(key=lambda x: x['pos_id'], reverse=False) # Sorting the character list by party order (top to bottom). Inherited order seems random.
+    
+    for buddy in buddies:
+        uid = str(buddy['uid'])
+        exp_boost = int(data['battle']['buddy_boost_map']['exp'][uid])
+        if exp_boost!=0:
+            id = str(buddy['id'])
+            name = str(names_fixed[id]) if (id in names_fixed) else str(buddy['params'][0]['disp_name']) # Use the alternative name from the 'names_fixed' array if it was defined. Otherwise use the default name.
+            results.append(' x{1:0.2f} {0}'.format(name, float(exp_boost)/100))
+            
+    if len(results):
+        print('EXP RM Boost:\n-------------')
+        print('\n'.join(results))
+        print('\n')
