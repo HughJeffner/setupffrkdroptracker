@@ -6,13 +6,14 @@ def response(flow):
     if len(re.findall('/get_battle_init_data', flow.request.path)) == 0:
         return
 
-    data   = json.loads(flow.response.content[3:].decode('utf8'))
+    data   = json.loads(flow.response.content.decode('utf-8-sig'))
     rounds = data['battle']['rounds']
 
     results = {
         'materias': [],
         'potions':  [],
-        'drops':    {}
+        'drops':    {},
+        'exp2X':    []
     }
 
     for round in rounds:
@@ -38,6 +39,10 @@ def response(flow):
 
         for materia in round['drop_materias']:
             results['materias'].append(materia['name'])
+            
+    for charUID in data['battle']['buddy_boost_map']['exp']:
+        if (data['battle']['buddy_boost_map']['exp'][charUID] == '200'):
+            results['exp2X'].append(int(charUID))
 
     print('######################################')
     print(time.strftime("%Y-%m-%d %H:%M:%S"))
@@ -100,5 +105,19 @@ def response(flow):
 
         for materia in results['materias']:
             print(materia)
+            
+    if len(results['exp2X']):
+        if (multi_segment):
+            print('\n-------------------\n')
+
+        multi_segment = True
+
+        charNames = []
+
+        for charData in data['battle']['buddy']:
+            if charData['uid'] in results['exp2X']:
+                charNames.append(charData['params'][0]['disp_name'])
+
+        print('Double XP: ' + ', '.join(charNames))
 
     print('\n\n')
