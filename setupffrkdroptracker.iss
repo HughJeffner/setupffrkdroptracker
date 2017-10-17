@@ -1,6 +1,6 @@
 #include <idp.iss> 
 #define MyAppName "FFRK Drop Tracker"
-#define MyAppVersion "1.3"
+#define MyAppVersion "1.3.1"
 #define MyAppPublisher "BaconCatBug"
 #define MyAppURL "https://www.reddit.com/r/FFRecordKeeper/comments/6vhyod/ffrk_drop_tracker_export_your_entire_inventory/"
 
@@ -24,7 +24,7 @@ SetupIconFile=icon.ico
 Compression=lzma
 SolidCompression=yes
 AppCopyright=u/baconcatbug 2017
-VersionInfoVersion=1.3
+VersionInfoVersion=1.3.1
 UninstallDisplayIcon={app}\icon.ico
 
 [Languages]
@@ -35,12 +35,14 @@ Source: "files\ffrk_drop_tracker.bat"; DestDir: "{app}"; Flags: ignoreversion; C
 Source: "files\ffrk_copyproxybypasstoclipboard.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: required
 Source: "files\ffrk_drop_tracker.py"; DestDir: "{app}"; Flags: ignoreversion; Components: required
 Source: "files\ffrk_drop_tracker_db.csv"; DestDir: "{app}"; Flags: ignoreversion; Components: required
+Source: "files\config.ini"; DestDir: "{app}"; Flags: ignoreversion; Components: required
 Source: "icon.ico"; DestDir: "{app}"; Flags: ignoreversion; Components: required
 Source: "{tmp}\vc_redist.x86.exe"; DestDir: "{app}"; Flags: external deleteafterinstall; ExternalSize: 13767776; Components: prereq
 Source: "{tmp}\mitmproxy-2.0.2-windows-installer.exe"; DestDir: "{app}"; Flags: external deleteafterinstall; ExternalSize: 34162113; Components: prereq
 
 [Icons]
 Name: "{group}\FFRK Drop Tracker"; Filename: "{app}\ffrk_drop_tracker.bat"; WorkingDir: "{app}"; IconFilename: "{app}\icon.ico"; IconIndex: 0; Components: required
+Name: "{group}\Configuration"; Filename: "{app}\config.ini"; WorkingDir: "{app}"; Components: required 
 Name: "{group}\View Reddit Post"; Filename: "{#MyAppURL}"; Components: required
 Name: "{group}\Copy Proxy Bypass List to Clipboard"; Filename: "{app}\ffrk_copyproxybypasstoclipboard.bat"; WorkingDir: "{app}"; MinVersion: 0,5.01; Components: required
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"; Components: required
