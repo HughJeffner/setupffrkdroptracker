@@ -1,6 +1,7 @@
 import json
 import time
 import re
+import configparser
 
 def response(flow):
     if len(re.findall('/get_battle_init_data', flow.request.path)) == 0:
@@ -8,6 +9,12 @@ def response(flow):
 
     data   = json.loads(flow.response.content.decode('utf-8-sig'))
     rounds = data['battle']['rounds']
+    config = configparser.ConfigParser()
+    config.read("config.ini")
+
+    if (config.getboolean('options', 'show_timer_type')):
+        data['battle']['show_timer_type']="1"
+        flow.response.text = json.dumps(data)
 
     results = {
         'materias': [],
