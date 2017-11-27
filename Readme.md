@@ -1,13 +1,19 @@
-Follow the install guide at https://redd.it/6vhyod or the HTML file called "Install Guide.html"
-Use the data exported with the Graphical Inventory Spreadsheet at https://docs.google.com/spreadsheets/d/1w6UnKkJzGFMG6l67UI_6TS3Od_gbTOltxNu-EuyM4Pw/edit#gid=996200154
+# FFRK Drop Tracker Setup
+This project creates an installer to simplify the setup of FFRK Drop Tracker:
+https://www.reddit.com/r/FFRecordKeeper/comments/6vhyod/ffrk_drop_tracker_export_your_entire_inventory/
 
-If you wish to remove shared Soul Breaks from the Soul Break export, edit line 144 to look for "categoryId >= 3" instead of 2. Alternatively if you want to export all your characters default soul break for some reason, change it to 1.
+In short, this installer will:
+* Provide a shortcut to run the application
+* Provide a shortcut to copy proxy bypass list to clipboard
+* Emulator setup instructions included in setup
+* Download and installation of prerequisites
 
-If you want to export your character info, uncomment the relevant code. Commented code begins with a "# " (That's a hash and a space), so delete that if you want to export.
+## Build Requirements
+Inno Setup: 
+http://www.jrsoftware.org/isinfo.php
 
-Credits:
-/u/vexnon for making the original mitmproxy scripts and a whole bunch of other tools.
-/u/therealhughjeffner for a tip regarding the command line.
-/u/Gitpush1337 for the expanded drop database csv file.
-/u/csdx for making a Query() that made the filtered Enlir tabs usable.
-The StackOverflow community for both being helpful angels and gatekeeping jackasses.
+Inno Download Plugin: 
+https://mitrichsoftware.wordpress.com/inno-setup-tools/inno-download-plugin/
+
+## I Just Want to Install it
+Check [Releases](https://github.com/HughJeffner/setupffrkdroptracker/releases)
