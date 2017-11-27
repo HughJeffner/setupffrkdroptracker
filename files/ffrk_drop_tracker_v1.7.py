@@ -1,6 +1,7 @@
 import json
 import time
 import re
+import configparser
 
 
 def response(flow):
@@ -9,6 +10,12 @@ def response(flow):
 
     data   = json.loads(flow.response.content.decode('utf-8-sig'))
     rounds = data['battle']['rounds']
+    config = configparser.ConfigParser()
+    config.read("config.ini")
+
+    if (config.getboolean('options', 'show_timer_type')):
+        data['battle']['show_timer_type']="1"
+        flow.response.text = json.dumps(data)
 
     results = {
         'materias': [],
@@ -47,7 +54,7 @@ def response(flow):
     multi_segment = False
 
     if len(results['drops']):
-        with open('ffrk_drop_tracker_db_do_not_delete.csv') as f:
+        with open('ffrk_drop_tracker_db.csv') as f:
             lines    = f.read().splitlines()[1:]
             drop_ids = {x.split(',')[0]: x.split(',')[1] for x in lines}
 
