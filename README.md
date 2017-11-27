@@ -1,19 +1,7 @@
-# FFRK Drop Tracker Setup
-This project creates an installer to simplify the setup of FFRK Drop Tracker:
-https://www.reddit.com/r/FFRecordKeeper/comments/6vhyod/ffrk_drop_tracker_export_your_entire_inventory/
+# This Repo Has Moved!
+You can find it here:
+https://github.com/HughJeffner/FFRK-Drop-Tracker-Setup
 
-In short, this installer will:
-* Provide a shortcut to run the application
-* Provide a shortcut to copy proxy bypass list to clipboard
-* Emulator setup instructions included in setup
-* Download and installation of prerequisites
+Please the new repostory instead, this one will be archived and set to read-only.  This change was required because I wanted to fork the original project (it didn't exist when I originally created this).  The only way was to fork a new repository and port all of the changes over to it.  This way, if the original author makes any updates I can quickly merge them in.
 
-## Build Requirements
-Inno Setup: 
-http://www.jrsoftware.org/isinfo.php
-
-Inno Download Plugin: 
-https://mitrichsoftware.wordpress.com/inno-setup-tools/inno-download-plugin/
-
-## I Just Want to Install it
-Check [Releases](https://github.com/HughJeffner/setupffrkdroptracker/releases)
+Thanks for understanding!
